@@ -1,6 +1,6 @@
        identification division.
        program-id. program1.
-       author. Smit Patel.
+       author. Smit Patel.Devansh Patel.
        date-written. 2020-04-01.
 
        environment division.
