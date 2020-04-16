@@ -1,6 +1,6 @@
        identification division.
        program-id. program1.
-       author. Smit Patel and Devansh Patel.
+       author. Smit Patel. Devansh Patel.
        date-written. 2020-04-01.
 
        environment division.
@@ -181,7 +181,6 @@
                error-report-file, invalid-data-file,
                valid-data-file.
 
-           accept return-code.
            stop run.
       *
       * Process logic
@@ -287,12 +286,6 @@
                write error-report-line     from ws-seperator
                    after advancing 1 line
            end-if.
-
-           display "********************************".
-           display "ws-valid-record   :" ws-valid-record.
-           display "ws-invalid-record :" ws-invalid-record.
-           display "ws-error-count    :" ws-error-count.
-           display "********************************".
 
            move zeroes                     to ws-error-count.
 
