@@ -109,6 +109,8 @@
                " '-' should be at third position".
            05 ws-invalid-invoice-number        pic x(48) value
                "Invoice number should be between 900000 & 100000".
+           05 ws-invoice-number-is-non-num     pic x(48) value
+               "Invoice number must be numeric".
            05 ws-invalid-SKU-code              pic x(36) value
                "SKU code cannot be empty.".
 
@@ -257,6 +259,13 @@
                    ws-invoice-dash-dislocated
                add 1                       to ws-error-count
            end-if.
+      * Check if invoice number is numeric
+           if (invoice-number is numeric) then
+           else
+               write error-report-line     from
+                   ws-invoice-number-is-non-num
+               add 1                       to ws-error-count
+           end-if
       * Check for number range
            if (invoice-number > 100000 and invoice-number <
              900000) then
@@ -266,7 +275,7 @@
                add 1                       to ws-error-count
            end-if
       * Check for 15 character SKU code
-           if (input-record-SKU-code = " ") then
+           if (input-record-SKU-code = space) then
                add 1                       to ws-error-count
                write error-report-line     from
                    ws-invalid-SKU-code
