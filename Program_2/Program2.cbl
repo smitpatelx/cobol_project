@@ -36,29 +36,13 @@
                88 transac-is-s value "S".
                88 transac-is-r value "R".
                88 transac-is-l value "L".
-           05 input-rec-transac-amount         pic 9(5)v99.
+           05 input-rec-trans-amount           pic 9(5)v99.
            05 filler                           pic x(2).
                88 type-is-CA value "CA".
                88 type-is-CR value "CR".
                88 type-is-DB value "DB".
            05 input-rec-store-number           pic x(2).
-               88 store-is-01 value "01".
-               88 store-is-02 value "02".
-               88 store-is-03 value "03".
-               88 store-is-04 value "04".
-               88 store-is-05 value "05".
-               88 store-is-12 value "12".
            05 input-rec-invoice-number         pic x(9).
-           05 define-invoice-number redefines
-               input-rec-invoice-number.
-               10 invoice-alpha                pic x(2).
-                   88 alpha-is-AA value "AA".
-                   88 alpha-is-BB value "BB".
-                   88 alpha-is-CC value "CC".
-                   88 alpha-is-DD value "DD".
-                   88 alpha-is-EE value "EE".
-               10 invoice-dash                 pic x(1).
-               10 invoice-number               pic 9(6).
            05 input-rec-SKU-code               pic x(15).
 
       *
@@ -271,7 +255,6 @@
            05 ws-total-line-gra-total          pic zzz,zz9.99.
            05 filler                           pic x(85).
 
-
       *
        01 ws-boolean-cnst.
            05 ws-true-cnst                     pic x value "Y".
@@ -380,12 +363,12 @@
       * S & L Check
                if (transac-is-s)
                    add 1 to ws-s-cnt
-                   add input-rec-transac-amount
+                   add input-rec-trans-amount
                        to ws-s-amt-total
                    write sl-record-line from input-record
                else
                    add 1 to ws-l-cnt
-                   add input-rec-transac-amount
+                   add input-rec-trans-amount
                        to ws-l-amt-total
                    write sl-record-line from input-record
                end-if
@@ -407,7 +390,7 @@
                      ws-store-sub)) then
                        add 1 to
                          ws-sl-store-num(ws-store-sub)
-                       add input-rec-transac-amount
+                       add input-rec-trans-amount
                          to
                          ws-sl-store-amt(ws-store-sub)
 
@@ -417,7 +400,7 @@
       * R check
                if (transac-is-r)
                    add 1 to ws-r-cnt
-                   add input-rec-transac-amount
+                   add input-rec-trans-amount
                      to ws-r-amt-total
                    write cct-report-linec from input-record
                end-if
@@ -428,7 +411,7 @@
                      ws-store-sub)) then
                        add 1 to
                          ws-r-store-num(ws-store-sub)
-                       add input-rec-transac-amount
+                       add input-rec-trans-amount
                          to
                          ws-r-store-amt(ws-store-sub)
                    end-if
