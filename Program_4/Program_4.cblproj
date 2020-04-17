@@ -23,7 +23,7 @@
     <MaxError>100</MaxError>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Program1.cbl" />
+    <Compile Include="Program4.cbl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Micro Focus\Visual COBOL\v1.0\MicroFocus.COBOL.targets" />
 </Project>

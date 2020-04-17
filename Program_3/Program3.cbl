@@ -1,7 +1,8 @@
        identification division.
        program-id. program3.
        author.Smit Patel. Devansh Patel.
-       
+       date-written. 10/04/2020.
+      *
        environment division.
        input-output section.
        file-control.
@@ -40,10 +41,10 @@
        01 print-line                   pic x(73).
       *
        working-storage section.
-
+      *
        01 ws-flags.
            05 WS-EOF-FLAGS             pic XX.
-
+      *
        01 ws-declaration.
            05 ws-pg-numbers                    pic 99 value 0.
            05 ws-c-for-lines                   pic 99 value zeroes.
@@ -67,7 +68,7 @@
            05 ws-total-trans-store-indi        occurs 6 times 
                indexed by indx-for-store.
                10 ws-final-transaction-store   pic 9(9)V99 value 0.
-
+      *
        01 ws-num-for-stores.
            05 filler                   pic 99 value 01.
            05 filler                   pic 99 value 02.
@@ -75,20 +76,20 @@
            05 filler                   pic 99 value 04.
            05 filler                   pic 99 value 05.
            05 filler                   pic 99 value 12.
-
+      *
        01 ws-store-num-const redefines ws-num-for-stores
            occurs 6 times indexed by index-const             pic 99.
-
+      *
        01 ws-constants.
            05 ws-tax-applicable        pic 99 value 13.
-
+      *
        01 ws-r-heading.
            05 filler                   pic x(25) value 
                "FINAL PROJECT - PROGRAM 3".
            05 filler                   pic x(28) value spaces.
            05 filler                   pic x(20) value 
                "Group 6 : Smit Patel".
-
+      *
        01 ws-r-heading-2.
            05 ws-rh-date               pic 9(6) value zeroes.
            05 filler                   pic x(4) value spaces.
@@ -96,14 +97,14 @@
            05 filler                   pic x(43) value spaces.
            05 filler                   pic x(13) value 
                "Devansh Patel".
-
+      *
        01 ws-heding-for-page.
            05 filler                   pic x(31) value spaces.
            05 ws-heading-pg            pic x(12) value "S&L Result".
            05 filler                   pic x(22) value spaces.
            05 filler                   pic x(6)  value "PAGE :".
            05 ws-c-pg-number           pic Z9    value "00".
-
+      *
        01 ws-r-heading-for-line-1.
            05 filler                   pic x(4)  value "Trns".
            05 filler                   pic x(5)  value spaces.
@@ -118,7 +119,7 @@
            05 filler                   pic x(3)  value "SKU".
            05 filler                   pic x(16) value spaces.
            05 filler                   pic x(3)  value "Tax".
-
+      *
        01 ws-r-heading-for-line-2.
            05 filler                   pic x(4)  value "Code".
            05 filler                   pic x(5)  value spaces.
@@ -133,7 +134,7 @@
            05 filler                   pic x(4)  value "Code".
            05 filler                   pic x(15) value spaces.
            05 filler                   pic x(6)  value "Amount".
-
+      *
        01 ws-r-heading-for-line-dash.
            05 filler                   pic x(4)  value "----".
            05 filler                   pic x(5)  value spaces.
@@ -148,7 +149,7 @@
            05 filler                   pic x(4)  value "----".
            05 filler                   pic x(15) value spaces.
            05 filler                   pic x(6)  value "------".
-
+      *
        01 ws-repo-info.
            05 filler                   pic x(1)  value spaces.
            05 ws-trans-code            pic xx.
@@ -165,28 +166,28 @@
            05 filler                   pic x(2)  value spaces.
            05 ws-taxe                  pic $(4)9.99.
            05 filler                   pic x(1)  value spaces.
-
+      *
        01 ws-blank-lines.
            05 filler                   pic x(73) value spaces.
-
+      *
        01 ws-tno-s-and-l.
            05 filler                   pic x(35)
                value "Total number of S&L records    : ".
            05 ws-tno-s-and-l-val       pic z9.
            05 filler                   pic x(36) value spaces.
-
+      *
        01 ws-tno-s.
            05 filler                   pic x(35)
                value "Total number of S   records    : ".
            05 ws-tno-s-val             pic z9.
            05 filler                   pic x(36) value spaces.
-
+      *
        01 ws-tno-l.
            05 filler                   pic x(35)
                value "Total number of L   records    : ".
            05 ws-tno-l-val             pic x9.
            05 filler                   pic x(36) value spaces.
-
+      *
        01 ws-payment-t-per.
            05 filler                   pic x(33) value
                "Payment Types Percentage:  CASH: ".
@@ -198,18 +199,18 @@
                "%    DEBIT: ".
            05 ws-tper-debit-val        pic z9.99.
            05 filler                   pic x(1) value '%'.
-
+      *
        01 ws-tax-in-total-owing.
            05 filler                   pic x(32)
                value "Total tax owing                :".
            05 filler                   pic x(3) value spaces.
            05 ws-tax-in-total-value    pic $$,$$9.99.
-
+      *
        01 ws-store-num-with-highest-sl.
            05 filler                   pic x(49) value 
                "Store num with highest S&L transaction Amount -  ".
            05 ws-snum-w-h-sl-val       pic Z9.
-
+      *
        01 ws-store-num-with-lowest-sl.
            05 filler                   pic x(49) value 
                "Store num with lowest S&L  transaction Amount -  ".
@@ -242,7 +243,9 @@
       * Close files and go back
            close input-file output-file.
            goback.
-
+      *
+      * Process Each Line
+      *
        100-process-line.
 
            perform 110-print-heading.
@@ -251,7 +254,9 @@
                varying ws-c-for-lines from 1 by 1
                until   ws-c-for-lines > 20
                or      WS-EOF-FLAGS = "t".
-
+      *
+      * Print Heading
+      *
        110-print-heading.
            add 1                           to ws-pg-numbers.
            move ws-pg-numbers              to ws-c-pg-number.
@@ -266,15 +271,20 @@
                after advancing 1 line.
            write print-line    from ws-blank-lines
                after advancing 1 line.
+      *
+      * Line on a page
+      *
        120-line-on-a-page.
 
-           PERFORM 130-print-lines.
+           perform 130-calculate-totals.
 
            read input-file
                AT END move "t" to WS-EOF-FLAGS
                END-read.
-
-       130-print-lines.
+      *
+      * Calculating Totals
+      *
+       130-calculate-totals.
 
            if (transac-is-s) then
                add 1 to ws-total-for-s
@@ -315,7 +325,9 @@
 
            write print-line from ws-repo-info
                after advancing 1 line.
-
+      *
+      * Process Store
+      *
        140-process-store.
            set index-const                     to indx-for-store.
            if( input-rec-store-number =
@@ -347,7 +359,9 @@
                end-if
 
            end-if.
-
+      *
+      * Print Footer
+      *
        150-print-footer.
 
            perform 160-processing-variables.
@@ -383,10 +397,13 @@
            ws-snum-w-l-sl-val.
            write print-line from ws-store-num-with-lowest-sl
                after advancing 1 line.
-
+      *
+      * Processing Variables
+      *
        160-processing-variables.
 
-           compute ws-total-for-sl = ws-total-for-s + ws-total-l.
+           compute ws-total-for-sl rounded = ws-total-for-s + 
+               ws-total-l.
 
            compute ws-total-percentage-of-cash rounded =
              (ws-total-for-cash * 100) / ws-total-for-sl.
