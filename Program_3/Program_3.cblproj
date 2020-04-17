@@ -23,7 +23,7 @@
     <MaxError>100</MaxError>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Program1.cbl" />
+    <Compile Include="Program3.cbl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />

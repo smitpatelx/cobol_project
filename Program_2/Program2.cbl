@@ -69,10 +69,9 @@
        working-storage section.
       *
        01 name-line-1.
-           05 filler                           pic x.
            05 filler                           pic x(40) value 
-               "FINAL PROJECT - PROGRAM #2".
-           05 filler                           pic x(55).
+               "FINAL PROJECT - PROGRAM 2".
+           05 filler                           pic x(57).
            05 filler                           pic x(10) value 
                "Group  6: ".
            05 filler                           pic x(15) value 
@@ -80,11 +79,10 @@
            05 filler                           pic x(16).
       *
        01 name-line-2.
-           05 filler                           pic x.
            05 ws-sys-date                      pic x(8).
            05 filler                           pic x(8).
            05 ws-sys-time                      pic x(7).
-           05 filler                           pic x(82).
+           05 filler                           pic x(84).
            05 filler                           pic x(30) values 
                "Devansh Patel".
            05 filler                           pic x(16).
@@ -116,24 +114,50 @@
            05 filler                           pic x(4) value spaces.
            05 filler                           pic x(8) value 
                "   S & L".
+           05 filler                           pic x(4) value spaces.
+           05 filler                           pic x(12) value 
+               "Store #1".
+           05 filler                           pic x(12) value 
+               "Store #2".
+           05 filler                           pic x(12) value 
+               "Store #3".
+           05 filler                           pic x(12) value 
+               "Store #4".
+           05 filler                           pic x(12) value 
+               "Store #5".
+           05 filler                           pic x(12) value 
+               "Store #12".
+           05 filler                           pic x(10) value spaces.
+      *
+       01 ws-total-S-L-heading-line-dash.
            05 filler                           pic x(2) value spaces.
+           05 filler                           pic x(12) value spaces.
+           05 filler                           pic x(2) value spaces.
+           05 filler                           pic x(8) value
+               "  -----".
+           05 filler                           pic x(4) value spaces.
+           05 filler                           pic x(8) value 
+               "--------".
+           05 filler                           pic x(4) value spaces.
+           05 filler                           pic x(8) value 
+               "   -----".
+           05 filler                           pic x(4) value spaces.
            05 filler                           pic x(12) value 
-               "Store No.1".
+               "--------".
            05 filler                           pic x(12) value 
-               "Store No.2".
+               "--------".
            05 filler                           pic x(12) value 
-               "Store No.3".
+               "--------".
            05 filler                           pic x(12) value 
-               "Store No.4".
+               "--------".
            05 filler                           pic x(12) value 
-               "Store No.5".
+               "--------".
            05 filler                           pic x(12) value 
-               "Store No.12".
+               "---------".
            05 filler                           pic x(10) value spaces.
       *
        01 ws-total-sl-line1.
-           05 filler                           pic x(2) value spaces.
-           05 filler                           pic x(12) value 
+           05 filler                           pic x(14) value 
                "Total Number".
            05 ws-total-line-s-num              pic z,zzz,zz9.
            05 filler                           pic x(4) value spaces.
@@ -149,13 +173,12 @@
            05 filler                           pic x(10).
       *
        01 ws-total-S-L-line2.
-           05 filler                           pic x(2) value spaces.
-           05 filler                           pic x(12) value 
+           05 filler                           pic x(13) value 
                "Total Amount".
-           05 filler                           pic x(2) value spaces.
-           05 ws-total-line-s-amt              pic z,zzz,zz9.
-           05 filler                           pic x(2) value spaces.
-           05 ws-total-line-l-amt              pic z,zzz,zz9.
+           05 filler                           pic x(1) value spaces.
+           05 ws-total-line-s-amt              pic zz,zz9.99.
+           05 filler                           pic x(4) value spaces.
+           05 ws-total-line-l-amt              pic zz,zz9.99.
            05 filler                           pic x(2) value spaces.
            05 ws-total-line-sl-amt             pic zzz,zz9.99.
            05 filler                           pic x(2) value spaces.
@@ -167,7 +190,6 @@
            05 filler                           pic x(10).
       *
        01 ws-payment-type-line1.
-           05 filler                           pic x(2) value spaces.
            05 filler                           pic x(16) value 
                "Payment Type:".
            05 filler                           pic x(10) value spaces.
@@ -182,7 +204,6 @@
            05 filler                           pic x(54) value spaces.
       *
        01 ws-payment-type-line2.
-           05 filler                           pic x(2) value spaces.
            05 filler                           pic x(16) value 
                "% of Transaction".
            05 filler                           pic x(7) value spaces.
@@ -200,26 +221,44 @@
                "RETURNS REPORT".
       *
        01 ws-total-r-heading-line.
-           05 filler                           pic x(17) value spaces.
+           05 filler                           pic x(15) value spaces.
            05 filler                           pic x(7) value
                " Return".
-           05 filler                           pic x(3) value spaces.
+           05 filler                           pic x(5) value spaces.
            05 filler                           pic x(12) value 
-               "Store No.1".
+               "Store #1".
            05 filler                           pic x(12) value 
-               "Store No.2".
+               "Store #2".
            05 filler                           pic x(12) value 
-               "Store No.3".
+               "Store #3".
            05 filler                           pic x(12) value 
-               "Store No.4".
+               "Store #4".
            05 filler                           pic x(12) value 
-               "Store No.5".
+               "Store #5".
            05 filler                           pic x(12) value 
-               "Store No.12".
+               "Store #12".
+           05 filler                           pic x(33) value spaces.
+      *
+       01 ws-total-r-heading-line-dash.
+           05 filler                           pic x(15) value spaces.
+           05 filler                           pic x(7) value
+               " ------".
+           05 filler                           pic x(5) value spaces.
+           05 filler                           pic x(12) value 
+               "--------".
+           05 filler                           pic x(12) value 
+               "--------".
+           05 filler                           pic x(12) value 
+               "--------".
+           05 filler                           pic x(12) value 
+               "--------".
+           05 filler                           pic x(12) value 
+               "--------".
+           05 filler                           pic x(12) value 
+               "---------".
            05 filler                           pic x(33) value spaces.
       *
        01 ws-total-R-line1.
-           05 filler                           pic x(2) value spaces.
            05 filler                           pic x(12) value 
                "Total Number".
            05 filler                           pic x(1) value spaces.
@@ -234,7 +273,6 @@
 
       *
        01 ws-total-R-line2.
-           05 filler                           pic x(2) value spaces.
            05 filler                           pic x(12) value 
                "Total Amount".
            05 ws-total-line-r-amount           pic zzz,zz9.99.
@@ -249,11 +287,10 @@
 
 
        01 ws-total-line.
-           05 filler                           pic x(2) value spaces.
-           05 filler                           pic x(35) value 
-               "Grand Total Amount      =".
-           05 ws-total-line-gra-total          pic zzz,zz9.99.
-           05 filler                           pic x(85).
+           05 filler                           pic x(21) value 
+               "Grand Total Amount :".
+           05 ws-total-line-gra-total          pic $$$,$$9.99.
+           05 filler                           pic x(80).
 
       *
        01 ws-boolean-cnst.
@@ -274,7 +311,6 @@
 
        01 ws-store-no-cnst redefines ws-data
            occurs 6 times pic 99.
-
 
       *
        01 ws-cnters.
@@ -374,13 +410,13 @@
                end-if
 
                if (type-is-CA) then
-                   add 1 to ws-ca-cnt
+                   add 1               to ws-ca-cnt
                end-if
                if (type-is-CR) then
-                   add 1 to ws-cr-cnt
+                   add 1               to ws-cr-cnt
                end-if
                if (type-is-DB) then
-                   add 1 to ws-db-cnt
+                   add 1               to ws-db-cnt
                end-if
 
                perform varying ws-store-sub
@@ -388,12 +424,10 @@
                  until ws-store-sub > ws-number-of-stores
                    if (input-rec-store-number = ws-store-no-cnst(
                      ws-store-sub)) then
-                       add 1 to
-                         ws-sl-store-num(ws-store-sub)
+                       add 1
+                           to ws-sl-store-num(ws-store-sub)
                        add input-rec-trans-amount
-                         to
-                         ws-sl-store-amt(ws-store-sub)
-
+                           to ws-sl-store-amt(ws-store-sub)
                    end-if
                end-perform
            else
@@ -404,6 +438,7 @@
                      to ws-r-amt-total
                    write cct-report-linec from input-record
                end-if
+
                perform varying ws-store-sub
                  from 1 by 1
                  until ws-store-sub > ws-number-of-stores
@@ -440,73 +475,68 @@
              (ws-db-cnt / ws-s-l-cnt) * 100.
 
            perform varying ws-store-sub
-             from 1 by 1
-             until ws-store-sub > ws-number-of-stores
-               move ws-sl-store-num(ws-store-sub)
-                 to
-                 ws-s-l-store-num(ws-store-sub)
-               move ws-sl-store-amt(ws-store-sub)
-                 to
-                 ws-s-l-store-amt(ws-store-sub)
-
-               move ws-r-store-num(ws-store-sub)
-                 to
-                 ws-retrun-store-num(ws-store-sub)
-               move ws-r-store-amt(ws-store-sub)
-                 to
-                 ws-return-store-amount(ws-store-sub)
+               from 1 by 1
+               until ws-store-sub > ws-number-of-stores
+                   move ws-sl-store-num(ws-store-sub)
+                       to ws-s-l-store-num(ws-store-sub)
+                   move ws-sl-store-amt(ws-store-sub)
+                       to ws-s-l-store-amt(ws-store-sub)
+                   move ws-r-store-num(ws-store-sub)
+                       to ws-retrun-store-num(ws-store-sub)
+                   move ws-r-store-amt(ws-store-sub)
+                       to ws-return-store-amount(ws-store-sub)
            end-perform.
 
-           move ws-s-cnt to
-             ws-total-line-s-num.
-           move ws-s-amt-total to
-             ws-total-line-s-amt.
+           move ws-s-cnt               to ws-total-line-s-num.
+           move ws-s-amt-total         to ws-total-line-s-amt.
 
-           move ws-l-cnt to ws-total-line-l-num.
-           move ws-l-amt-total to ws-total-line-l-amt.
+           move ws-l-cnt               to ws-total-line-l-num.
+           move ws-l-amt-total         to ws-total-line-l-amt.
 
-           move ws-s-l-cnt to ws-total-line-sl-num.
-           move ws-s-l-amt-total to ws-total-line-sl-amt.
+           move ws-s-l-cnt             to ws-total-line-sl-num.
+           move ws-s-l-amt-total       to ws-total-line-sl-amt.
 
-           move ws-ca-percent to ws-percent-ca.
-           move ws-cr-percent to ws-percent-cr.
-           move ws-db-percent to ws-percent-db.
+           move ws-ca-percent          to ws-percent-ca.
+           move ws-cr-percent          to ws-percent-cr.
+           move ws-db-percent          to ws-percent-db.
 
-           move ws-r-cnt to ws-total-line-r-num.
-           move ws-r-amt-total to ws-total-line-r-amount.
+           move ws-r-cnt               to ws-total-line-r-num.
+           move ws-r-amt-total         to ws-total-line-r-amount.
 
-           move ws-grand-total to ws-total-line-gra-total.
+           move ws-grand-total         to ws-total-line-gra-total.
 
 
            write cct-report-line from ws-dash-line-1
-             after advancing 1 lines.
-           write cct-report-line from
-             ws-total-S-L-heading-line
-             after advancing 2 lines.
+               after advancing 1 lines.
+           write cct-report-line from ws-total-S-L-heading-line
+               after advancing 2 lines.
+           write cct-report-line from ws-total-S-L-heading-line-dash
+               after advancing 1 lines.
            write cct-report-line from ws-total-sl-line1
-             after advancing 1 line.
+               after advancing 1 line.
            write cct-report-line from ws-total-S-L-line2
-             after advancing 1 line.
+               after advancing 1 line.
 
            write cct-report-line from ws-payment-type-line1
-             after advancing 2 lines.
+               after advancing 2 lines.
            write cct-report-line from ws-payment-type-line2
-             after advancing 1 line.
+               after advancing 1 line.
 
            write cct-report-line from ws-total-R-line
-             after advancing 2 lines.
+               after advancing 2 lines.
            write cct-report-line from ws-dash-line-2
-             after advancing 1 lines.
-           write cct-report-line from
-             ws-total-r-heading-line
-             after advancing 2 lines.
+               after advancing 1 lines.
+           write cct-report-line from ws-total-r-heading-line
+               after advancing 2 lines.
+           write cct-report-line from ws-total-r-heading-line-dash
+               after advancing 1 lines.
            write cct-report-line from ws-total-R-line1
-             after advancing 1 line.
+               after advancing 1 line.
            write cct-report-line from ws-total-R-line2
-             after advancing 1 line.
+               after advancing 1 line.
 
            write cct-report-line from ws-total-line
-             after advancing 3 lines.
+               after advancing 3 lines.
 
       *
        end program program2.
