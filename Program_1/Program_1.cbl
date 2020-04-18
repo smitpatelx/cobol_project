@@ -2,7 +2,10 @@
        program-id. program1.
        author. Smit Patel. Devansh Patel.
        date-written. 2020-04-01.
-
+      * Description: Editing the input records to ensure validity and
+      *  seperate valid and invalid records into respective output
+      *  files.
+      *
        environment division.
        input-output section.
        file-control.
@@ -22,7 +25,6 @@
             select valid-data-file
                assign to '../../../data/ValidData.dat'
                organization is line sequential.
-
       *
        data division.
        file section.

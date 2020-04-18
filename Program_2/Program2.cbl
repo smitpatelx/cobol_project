@@ -3,7 +3,7 @@
        author. Smit Patel. Devansh Patel.
        date-written. 2020-04-01.
       * Description: This program help in data splitting
-      * and counting recourds.
+      * and counting recourds. This program also output data files.
 
        environment division.
        input-output section.
@@ -297,7 +297,6 @@
            05 ws-true-cnst                     pic x value "Y".
            05 ws-false-cnst                    pic x value "N".
       *
-      *
        01 ws-code-cnst.
            05 ws-number-of-stores              pic 99 value 6.
 
@@ -313,27 +312,26 @@
            occurs 6 times pic 99.
 
       *
-       01 ws-cnters.
-           05 ws-s-l-cnt                       pic 999 value 0.
-           05 ws-records-cnt                   pic 999 value 0.
-           05 ws-s-cnt                         pic 999 value 0.
-           05 ws-r-cnt                         pic 999 value 0.
-           05 ws-l-cnt                         pic 999 value 0.
-           05 ws-ca-cnt                        pic 999 value 0.
-           05 ws-cr-cnt                        pic 999 value 0.
-           05 ws-db-cnt                        pic 999 value 0.
-           05 ws-store-sub                     pic 9 value 0.
+       77 ws-s-amt-total                       pic 9(7)v99 value 0.
+       77 ws-l-amt-total                       pic 9(7)v99 value 0.
+       77 ws-r-amt-total                       pic 9(7)v99 value 0.
+       77 ws-s-l-amt-total                     pic 9(7)v99 value 0.
+       77 ws-grand-total                       pic 9(7)v99 value 0.
+       77 ws-ca-percent                        pic 99v99 value 0.
+       77 ws-cr-percent                        pic 99v99 value 0.
+       77 ws-db-percent                        pic 99v99 value 0.
+       77 ws-s-l-cnt                           pic 999 value 0.
+       77 ws-records-cnt                       pic 999 value 0.
+       77 ws-s-cnt                             pic 999 value 0.
+       77 ws-r-cnt                             pic 999 value 0.
+       77 ws-l-cnt                             pic 999 value 0.
+       77 ws-ca-cnt                            pic 999 value 0.
+       77 ws-cr-cnt                            pic 999 value 0.
+       77 ws-db-cnt                            pic 999 value 0.
+       77 ws-store-sub                         pic 9 value 0.
 
       *
        01 ws-totals.
-           05 ws-s-amt-total                   pic 9(7)v99 value 0.
-           05 ws-l-amt-total                   pic 9(7)v99 value 0.
-           05 ws-r-amt-total                   pic 9(7)v99 value 0.
-           05 ws-s-l-amt-total                 pic 9(7)v99 value 0.
-           05 ws-grand-total                   pic 9(7)v99 value 0.
-           05 ws-ca-percent                    pic 99v99 value 0.
-           05 ws-cr-percent                    pic 99v99 value 0.
-           05 ws-db-percent                    pic 99v99 value 0.
            05 ws-sl-store-nums.
                10 ws-sl-store-num              pic 99 value 0
                    occurs 6 times.
@@ -387,7 +385,6 @@
 
            write cct-report-line from name-line-1.
            write cct-report-line from name-line-2.
-      *    write cct-report-line from name-line-3.
            write cct-report-line from ws-heading-1
                after advancing 1 line.
 
