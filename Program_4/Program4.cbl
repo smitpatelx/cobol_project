@@ -243,6 +243,9 @@
       *
            open input data-file.
            open output print-file.
+
+           accept ws-rh-date from date.
+           accept ws-rh-time from time.
       *
       * Write report main heading
       *

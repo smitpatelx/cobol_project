@@ -129,20 +129,19 @@
            05 filler                           pic x(30).
 
        01 ws-heading-line-1.
-           05 filler                           pic x(15) value 
-               "Collobrator 1".
-           05 filler                           pic x(10).
-           05 filler                           pic x(15) value 
-               "Collobrator 2".
-           05 filler                           pic x(10).
+           05 filler                           pic x(24) value 
+               "Program 1 - Error Report".
+           05 filler                           pic x(24).
+           05 filler                           pic x(10) value 
+               "Smit Patel".
 
        01 ws-heading-line-2.
-           05 filler                           pic x(15) value 
-               "Smit Patel".
-           05 filler                           pic x(10).
-           05 filler                           pic x(15) value 
+           05 ws-current-date                  pic 9(6).
+           05 filler                           pic x(11).
+           05 ws-current-time                  pic 9(7).
+           05 filler                           pic x(21).
+           05 filler                           pic x(13) value 
                "Devansh Patel".
-           05 filler                           pic x(10).
 
        01 ws-record-with-error.
            05 filler                           pic x(9) value 
@@ -160,6 +159,9 @@
            open input input-file,
              output error-report-file, invalid-data-file,
              valid-data-file.
+
+           accept ws-current-date from date.
+           accept ws-current-time from time.
 
            write error-report-line         from ws-heading-line-1.
            write error-report-line         from ws-heading-line-2.
