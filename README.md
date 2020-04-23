@@ -1,6 +1,12 @@
 # MAFD4202 – Winter 2020
  Mainframe Development 1
  Team Programming Project
+ 
+ ### Collobrators:
+ @github/smitpatelx
+ @github/SwagShadowDevansh
+
+<hr/>
 
 The Mainframe Development 1 team programming project is a group project that will create 4 interlinked COBOL programs. Groups are comprised of either 2-3 members that belong to the same class section. You will choose your group, BUT you will have to advise your professor by email of the names of your group members to confirm the group enrollment.
 
